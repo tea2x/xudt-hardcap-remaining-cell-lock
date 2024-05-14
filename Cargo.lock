@@ -88,16 +88,6 @@ checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
 
 [[package]]
 name = "bytes"
-version = "0.4.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "206fdffcfa2df7cbe15601ef46c813fce0965eb3286db6b56c583b814b51c81c"
-dependencies = [
- "byteorder",
- "iovec",
-]
-
-[[package]]
-name = "bytes"
 version = "1.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "514de17de45fdb8dc022b1a7975556c53c86f9f0aa5f534b98977b171857c2c9"
@@ -466,7 +456,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2df7c7410664bc917f1b663c574ec7c0e25711fe4f63eb0043c47c197afb0875"
 dependencies = [
  "bit-vec",
- "bytes 1.6.0",
+ "bytes",
  "ckb-channel",
  "ckb-constant",
  "ckb-error",
@@ -534,7 +524,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0cc004a826b9bc9319ffae0b8415690e1b5f1482266d55fbd43843aa40ddcd63"
 dependencies = [
  "byteorder",
- "bytes 1.6.0",
+ "bytes",
  "cc",
  "ckb-vm-definitions",
  "derive_more",
@@ -724,15 +714,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "iovec"
-version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b2b3ea6ff95e175473f8ffe6a7eb7c00d054240321b84c57051175fe3c1e075e"
-dependencies = [
- "libc",
-]
-
-[[package]]
 name = "itoa"
 version = "1.0.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -810,20 +791,22 @@ dependencies = [
 
 [[package]]
 name = "molecule"
-version = "0.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "289909633052b04aaf9ff823e90ab955b5d39e90aa597cd23171aafb3e0b40c1"
-dependencies = [
- "bytes 0.4.12",
-]
-
-[[package]]
-name = "molecule"
 version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d4fd9767ab5e5f2ea40f71ff4c8bdb633c50509052e093c2fdd0e390a749dfa3"
 dependencies = [
- "bytes 1.6.0",
+ "bytes",
+ "cfg-if",
+ "faster-hex",
+]
+
+[[package]]
+name = "molecule"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6efe1c7efcd0bdf4ca590e104bcb13087d9968956ae4ae98e92fb8c1da0f3730"
+dependencies = [
+ "bytes",
  "cfg-if",
  "faster-hex",
 ]
@@ -1101,7 +1084,7 @@ name = "remaining-cell-lock"
 version = "0.1.0"
 dependencies = [
  "ckb-std",
- "molecule 0.0.1",
+ "molecule 0.8.0",
 ]
 
 [[package]]
